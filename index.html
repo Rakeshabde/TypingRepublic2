@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    
+    
+    <link rel="stylesheet" href="TyPing_Club.css" type="text/css">
+    <link rel="stylesheet" href="TyPing_Board.css" type="text/css">
+
+    <title>Typing Republic</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="mainNav" class="navbar navbar-dark navbar-expand-lg pt-0 pb-0 fixed-top">
+        <a href="#" class="navbar-brand mr-3">TyPing RePublic</a> <!-- Navbar-brand -->
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks">
+            <span class="navbar-toggler-icon"></span><!-- Navbar toggle button -->
+        </button>
+        <div class="collapse navbar-collapse" id="navLinks"> <!-- Navbar-collapse -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item mr-3"> <!-- Navbar-items -->
+                    <a class="nav-link" href="#"><i class="fas fa-home"></i> Home</a>
+                </li>
+
+                <li class="nav-item mr-2">
+                    <a href="#" class="nav-link"><i class="fas fa-keyboard"></i> Learn Typing</a>
+                </li>
+
+                <li class="nav-item active mr-2">
+                    <a href="#" class="nav-link"><i class="fas fa-tachometer-alt"></i> Test</a>
+                </li>
+
+                <li class="nav-item mr-2">
+                    <a href="faq.html" class="nav-link"><i class="fas fa-question-circle"></i> FAQs</a>
+                </li>
+
+                <li class="nav-item mr-5">
+                    <a href="#" class="nav-link"><i class="fas fa-building"></i> About Us</a>
+                </li>
+
+                <li class="nav-item mr-3">
+                    <a href="#" class="nav-link"><i class="fas fa-sign-in-alt"></i> Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section id="carousel"> <!-- Carousel -->
+        <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="3000">    
+            <!-- Jo Carousel mein dash nazar aa rhe hain neeche yeh uska hai... -->
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExample" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExample" data-slide-to="1"></li>
+                <li data-target="#carouselExample" data-slide-to="2"></li>
+            </ol>
+            <!-- Carousel Items -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8dHlwaW5nfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt="">
+                    <div class="carousel-caption d-none d-md-block">
+                        <button id="prop" class="btn btn-outline-danger pt-2 pb-2 mb-5">Get Started</button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="https://images.unsplash.com/photo-1602016736566-7ed6a58894bd?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8dHlwaW5nfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt="">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 id="chfont">Welcome To The World Of Practice</h5>
+                        <p id="lead">Here you will Practice: Speed, Accuracy and Many More</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="https://images.unsplash.com/photo-1598007805442-51d4c5f83236?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzN8fHR5cGluZ3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt="">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Welcome To The World Of Practice</h5>
+                        <p>Here you will Practice: Speed, Accuracy and Many More</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Carousel -->
+            <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+        </div>
+    </section>
+
+    <hr id="mainDiv">
+
+    <!-- Adding Typing Test Board -->
+    <div id="Typing_Board">
+        <div class="container-fluid">
+            <div class="heading">Try Yourself on Typester</div>
+            <div class="header">
+                <div class="wpm">
+                    <div class="header_text">WPM</div>
+                    <div class="curr_wpm">100</div>
+                </div>
+                <div class="cpm">
+                    <div class="header_text">CPM</div>
+                    <div class="curr_cpm">100</div>
+                </div>
+                <div class="errors">
+                    <div class="header_text">Errors</div>
+                    <div class="curr_errors">0</div>
+                </div>
+                <div class="timer">
+                    <div class="header_text">Time</div>
+                    <div class="curr_time">60s</div>
+                </div>
+                <div class="accuracy">
+                    <div class="header_text">% Accuracy</div>
+                    <div class="curr_accuracy">100</div>
+                </div>
+            </div>
+        
+            <div class="quote">Click on the area below to start the Test.</div>
+            <textarea class="input_area" placeholder="start typing here..." oninput="processCurrentText()"
+            onfocus="startGame()">
+            </textarea>
+            <button class="restart_btn" onclick="resetValues()">Restart</button>
+        </div>
+    </div>
+
+    <hr id="mainDiv">
+    
+    <!-- Adding Features Code -->
+    <div class="container">
+    <section id="features">
+        <div class="container">
+            <center> <h1 id="heading1">Features</h1> </center>
+        </div>
+        <!-- 1 -->
+        <section class="container-fluid px-0">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <img id="resize" src="https://image.shutterstock.com/image-vector/laptop-hands-on-keyboard-vector-600w-755257867.jpg" alt="Animated Typing"> 
+                        </div>
+                        
+                        <div class="col-lg-3">
+                            <div id = "headingGroup" class="text-white text-center d-none d-md-block">
+                                <h2 id="heading2"> <strong>Animated Tutorials</strong></h2>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <hr id="ideal">
+                    
+                    <p id="lead2">Some exciting animated tutorials to help you in improving your Speed as well as Accuracy. So start your exciting journey with us and master your skills. </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <img id="resize" src="https://image.shutterstock.com/z/stock-photo-businesswoman-typing-in-the-computer-keyboard-and-using-a-mouse-15230122.jpg" alt="Typing Test"> 
+                        </div>
+                        
+                        <div class="col-lg-3">
+                            <div id = "headingGroup" class="text-white text-center d-none d-md-block">
+                                <h2 id="heading2"> <strong>Test</strong></h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr id="ideal">
+
+                    <p id="lead2">Test your speed and accuracy in given time and evaluate yourself on our newly introduced <strong>Typester</strong>.</p>
+                </div>
+            </div>
+        </section>
+        <!-- 2 -->
+        <section class="container-fluid px-0">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <img id="resize" src="https://image.shutterstock.com/image-photo/blog-social-media-networking-content-600w-381189202.jpg" alt="Blogging"> 
+                        </div>
+                        
+                        <div class="col-lg-3">
+                            <div id = "headingGroup" class="text-white text-center d-none d-md-block">
+                                <h2 id="heading2"> <strong>Blogging</strong></h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr id="ideal">
+
+                    <p id="lead2">You also have a feature of reading blogs which helps in enhancing your knowledge. Also you can share your thoughts.</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <img id="resize" src="https://image.shutterstock.com/image-photo/personal-development-career-growth-progress-600w-461317267.jpg" alt="Evaluation"> 
+                        </div>
+                        
+                        <div class="col-lg-3">
+                            <div id = "headingGroup" class="text-white text-center d-none d-md-block">
+                                <h2 id="heading2"> <strong>Evaluation</strong></h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr id="ideal">
+
+                    <p id="lead2">Just follow the given formula: Practice-Test-Evaluate-Repeat. You can easily achieve your set goal.</p>
+                </div>
+            </div>
+        </section>
+        <!-- 3 -->
+        <section class="container-fluid px-0">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <img id="resize" src="https://image.shutterstock.com/z/stock-photo-no-sign-185370605.jpg" alt="No Sign"> 
+                        </div>
+                        
+                        <div class="col-lg-3">
+                            <div id = "headingGroup" class="text-white text-center d-none d-md-block">
+                                <h2 id="heading2"> <strong>No Log-in</strong></h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr id="ideal">
+
+                    <p id="lead2">No Sign-in. Just Dive into the world of Learning and Practice.</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <img id="resize" src="https://image.shutterstock.com/z/stock-photo-businessman-uses-virtual-touchscreen-and-touches-word-customize-customization-product-business-1553620073.jpg" alt="Typing Test"> 
+                        </div>
+                        
+                        <div class="col-lg-3">
+                            <div id = "headingGroup" class="text-white text-center d-none d-md-block">
+                                <h2 id="heading2"> <strong>Customize</strong></h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr id="ideal">
+
+                    <p id="lead2">We also allow you to customize your text as well as practice words, alphabets and many more of your type.</p>
+                </div>
+            </div>
+        </section>
+    </section>
+    </div>
+
+    <!-- "How To Access" Code -->
+    <div class="container">
+    <section id="How-To">
+        <div class="container">
+            <center> <h1 id="heading1">How To Access</h1> </center>
+        </div>
+        <!-- 1 -->
+        <section class="container-fluid px-0">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <img id="resize" src="https://image.shutterstock.com/image-photo/golden-christmas-star-isolated-on-260nw-1485477536.jpg" alt="star">
+                        </div>
+                        
+                        <div class="col-lg-3">
+                            <div id = "headingGroup" class="text-white text-center d-none d-md-block">
+                                <h2 id="heading2"> <strong>Typing Test</strong></h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr id="ideal">
+                    <p id="lead2">Just scroll upwards, Click on the coloured box and start typing. Also if you want to give test on particular topic, so scroll to navigation bar and select <strong>"Test"</strong>.</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <img id="resize" src="https://image.shutterstock.com/image-photo/golden-christmas-star-isolated-on-260nw-1485477536.jpg" alt="star"> 
+                        </div>
+                        
+                        <div class="col-lg-3">
+                            <div id = "headingGroup" class="text-white text-center d-none d-md-block">
+                                <h2 id="heading2"> <strong>Blogs</strong></h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr id="ideal">
+
+                    <p id="lead2">In the navigation bar itself there is a link for blog so just click on it. Also to write your own blog just click on "+" symbol.</p>
+                </div>
+            </div>
+        </section>
+        <!-- 2 -->
+        <section class="container-fluid px-0">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <img id="resize" src="https://image.shutterstock.com/image-photo/golden-christmas-star-isolated-on-260nw-1485477536.jpg" alt="star">                            
+                        </div>
+                        
+                        <div class="col-lg-3">
+                            <div id = "headingGroup" class="text-white text-center d-none d-md-block">
+                                <h2 id="heading2"> <strong>Tutorials</strong></h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr id="ideal">
+
+                    <p id="lead2">You can easily navigate to tutorials by clicking on <strong>"Learn Typing"</strong> in navigation bar, and select any topic you want to learn.</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <img id="resize" src="https://image.shutterstock.com/image-photo/golden-christmas-star-isolated-on-260nw-1485477536.jpg" alt="star">                            
+                        </div>
+                        
+                        <div class="col-lg-3">
+                            <div id = "headingGroup" class="text-white text-center d-none d-md-block">
+                                <h2 id="heading2"> <strong>Customization</strong></h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr id="ideal">
+
+                    <p id="lead2">When you will practice typing or giving test, click on a samll button with name <strong>"Customize"</strong> and change accordingly.</p>
+                </div>
+            </div>
+        </section>
+    </section>
+    </div>
+    <hr id="mainDiv">
+
+    <section id = "motivation">
+        <div class="container">
+            <center><h1 id="heading1">3 ways to success: Practice! Practice! Practice</h1></center>
+            <center><p id="lead3">Practice is the only key to success. Every day practice your typing skills just for 15-20 minutes <br>and in few days you will discover the change in yourself. So just tie up with us practice your skills and be the master.</p></center>
+        </div>
+    </section>
+    
+     <!-- footer -->
+     <footer>
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-4 text-center text-md-left ">
+                    
+                    <div class="py-0">
+                        <h3 class="my-4 text-white"><span class="mx-2 font-italic text-warning ">TyPing RePublic</span></h3>
+
+                        <p class="footer-links font-weight-bold">
+                            <a class="text-white" href="#">Home</a>
+                            |
+                            <a class="text-white" href="#">About</a>
+                            |
+                            <a class="text-white" href="#">Contact</a>
+                        </p>
+                        <p class="text-light py-4 mb-4">&copy;2021 Typing Republic LLC</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 text-white text-center text-md-left ">
+                    <div class="py-2 my-4">
+                        <div>
+                            <p class="text-white"> <i class="fa fa-map-marker mx-2 "></i>
+                                    41, Damodar Apartment, Agra Road <br>Aligarh, UP-West</p>
+                        </div>
+
+                        <div> 
+                            <p><i class="fa fa-phone-alt  mx-2 "></i> +91 97XXXXXX04</p>
+                        </div>
+                        <div>
+                            <p><i class="fa fa-envelope  mx-2"></i><a href="mayankmohan74@gmail.com">support@republic_typing.com</a></p>
+                        </div>  
+                    </div>  
+                </div>
+                
+                <div class="col-md-4 text-white my-4 text-center text-md-left ">
+                    <span class=" font-weight-bold ">About the Company</span>
+					<p class="text-warning my-2" >It is a great platform to train your fingers for typing with speed and accuracy. We also provide several tutorial to train you in proper way.</p>
+                    <div class="py-2">
+                        <a href="#"><i class="fab fa-facebook fa-2x text-primary mx-3"></i></a>
+                        <a href="#"><i class="fab fa-google-plus fa-2x text-danger mx-3"></i></a>
+                        <a href="#"><i class="fab fa-twitter fa-2x text-info mx-3"></i></a>
+                        <a href="#"><i class="fab fa-youtube fa-2x text-danger mx-3"></i></a>
+                    </div>
+                </div>
+            </div>  
+        </div>
+     </footer>
+    
+    <script src="TyPing_Board.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>  
+</body>
+</html>

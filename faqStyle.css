@@ -1,0 +1,102 @@
+body{
+    background: white;
+    font-family: "Nunito" sans-serif;
+}
+
+#mainNav{
+    background:#000272;
+}
+
+#mainNav .navbar-brand{
+    color: antiquewhite;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+#mainNav .nav-link{
+    background: none;
+    color: antiquewhite;
+}
+
+img{
+    height: 26rem;
+}
+
+#prop{
+    border-radius: 10px;
+}
+
+#chfont{
+    color: black;
+}
+
+#lead{
+    color: black;
+}
+
+#mainNav .nav-link:hover{
+    background-color: antiquewhite;
+    border-radius: 0.5rem;
+    color: black;
+}
+
+#heading1{
+    color:  #2a2b63;
+    font-size: 45px;
+    font-weight: 500;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+#resize{
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-left: 55px;
+}
+
+#heading2{
+    color: black;
+    font-size: 20px;
+    margin-top: 55px;
+    margin-left: 20px;
+}
+
+#lead2{
+    color: black;
+    font-size: 20px;
+    margin-left: 55px;
+    font-size: medium;
+}
+hr{
+    width: 60%;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+#ideal{
+    width: 400px;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+#mainDiv{
+    width: 80%;
+    border-top: 1px solid goldenrod;
+    border-bottom: 1px solid goldenrod;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#lead3{
+    font-size: 15px;
+}
+
+footer{
+    background-color: #211a4b;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
