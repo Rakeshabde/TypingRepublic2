@@ -1,54 +1,54 @@
-body{
+body {
     background: white;
     font-family: "Nunito" sans-serif;
 }
 
-#mainNav{
-    background:#000272;
+#mainNav {
+    background: #000272;
 }
 
-#mainNav .navbar-brand{
+#mainNav .navbar-brand {
     color: antiquewhite;
     font-weight: 500;
     font-size: 20px;
 }
 
-#mainNav .nav-link{
+#mainNav .nav-link {
     background: none;
     color: antiquewhite;
 }
 
-img{
+img {
     height: 26rem;
 }
 
-#prop{
+#prop {
     border-radius: 10px;
 }
 
-#chfont{
+#chfont {
     color: black;
 }
 
-#lead{
+#lead {
     color: black;
 }
 
-#mainNav .nav-link:hover{
+#mainNav .nav-link:hover {
     background-color: antiquewhite;
     border-radius: 0.5rem;
     color: black;
 }
 
-#heading1{
-    color:  #2a2b63;
+#heading1 {
+    color: #2a2b63;
     font-size: 45px;
     font-weight: 500;
     margin-top: 50px;
     margin-bottom: 40px;
 }
 
-#resize{
+#resize {
     width: 100px;
     height: 100px;
     margin-bottom: 20px;
@@ -56,32 +56,33 @@ img{
     margin-left: 55px;
 }
 
-#heading2{
+#heading2 {
     color: black;
     font-size: 20px;
     margin-top: 55px;
     margin-left: 20px;
 }
 
-#lead2{
+#lead2 {
     color: black;
     font-size: 20px;
     margin-left: 55px;
     font-size: medium;
 }
-hr{
+
+hr {
     width: 60%;
     border-top: 1px solid #f8f8f8;
-    border-bottom: 1px solid rgba(0,0,0,0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-#ideal{
+#ideal {
     width: 400px;
     border-top: 1px solid #f8f8f8;
-    border-bottom: 1px solid rgba(0,0,0,0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-#mainDiv{
+#mainDiv {
     width: 80%;
     border-top: 1px solid goldenrod;
     border-bottom: 1px solid goldenrod;
@@ -89,10 +90,10 @@ hr{
     margin-bottom: 50px;
 }
 
-#lead3{
+#lead3 {
     font-size: 15px;
 }
 
-footer{
+footer {
     background-color: #211a4b;
 }

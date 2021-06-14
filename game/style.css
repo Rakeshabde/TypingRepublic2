@@ -1,0 +1,369 @@
+body {
+	background: url("https://cdn.pixabay.com/photo/2020/03/22/06/57/game-background-4956017_1280.jpg") no-repeat center center fixed;
+	background-size: cover;
+	height: 100%;
+	overflow: hidden;
+	font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial;
+	font-size: .9em;
+	color: #333;
+}
+
+body.scores {
+	overflow: auto;
+}
+
+canvas {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 10;
+}
+
+#tip {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 100px;
+	z-index: 50;
+	margin: 0;
+
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+.start {
+	position: absolute;
+	right: 0;
+	left: 0;
+	z-index: 40;
+	text-align: center;
+	display: none;
+}
+	.start p {
+		margin: 0 0 10px 0;
+		color:black;
+	}
+#start {
+	background: #333;
+	font-size: 32px;
+	line-height: 32px;
+	border-radius: 5px;
+	padding: 6px 10px;
+	font-family:"Oxfam TSTAR PRO";
+	cursor: pointer;
+}
+
+#start:hover{
+	background:#0099FF;
+}
+#controls {
+	display: none;
+	background: #fff;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	z-index: 50;
+}
+
+#controls .publish {
+	text-align: center;
+	margin-top: 30px;
+}
+	
+#controls #publish {
+	display: inline-block;
+	margin-bottom: 10px;
+	width: 100%;
+	display: block;
+}
+
+#publish .fb{
+	display:none;
+}
+	
+#controls .opt {
+	padding-top: 7px;
+}
+
+#controls .opt label {
+	margin-top: 7px;
+	cursor: pointer;
+}
+
+#published {
+	background: #f9f9f9;
+	box-shadow: 0 0 10px #ccc;
+
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 40;
+
+	padding: 15px;
+	height: 100px;
+	display: none;
+}
+	
+#published h3 {
+	font-weight: bold;
+}
+
+#published .url {
+		padding: 5px;
+		width: 350px;
+	}
+	#published .share {
+		display: inline-block;
+		margin-left: 25px;
+	}
+	#published .share a {
+		margin-left: 25px;
+		-webkit-transition: opacity .2s ease-in;
+		transition: opacity .2s ease-in;
+	}
+	#published .share a:hover {
+		opacity: .7;
+		-webkit-transition: opacity .2s ease-in;
+		transition: opacity .2s ease-in;
+	}
+	#published .tweet {
+		background: url('images/twitter.png') left center no-repeat;
+		padding-left: 25px;
+	}
+	#published .fb {
+		background: url('images/facebook.png') left center no-repeat;
+		padding-left: 15px;
+	}
+	#published .gplus {
+		background: url('images/gplus.png') left center no-repeat;
+		padding-left: 25px;
+	}
+
+#score {
+	font-size: 50px;
+	color:#000fFF;
+	line-height: 50px;
+	text-align: center;
+}
+
+#stage{
+	/* background: url("https://cdn.pixabay.com/photo/2020/03/22/06/57/game-background-4956017_1280.jpg") no-repeat fixed center; */
+	width: 100%;
+    height: 100%;
+    max-height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url("https://cdn.pixabay.com/photo/2020/03/22/06/57/game-background-4956017_1280.jpg");
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+}
+
+#notice {
+	position: absolute;
+	right: 0;
+	top: 100px;
+	left: 0;
+	font-size: 5em;
+	text-align: center;
+	color: #000fff;
+	display: none;
+	z-index: 50;
+}
+
+#stats {
+	text-align: center;
+	list-style-type: none;
+	margin: 40px 0 40px 0;
+	padding: 0;
+}
+	#stats li {
+	/*	border: 1px solid #333;*/
+		margin-bottom: 15px;
+	}
+	#stats h1 {
+		margin: 0;
+		font-size: 22px;
+	}
+	#stats label {
+		background:#6633FF;
+		color: #fff;
+		font-size: 11px;
+		padding: 2px 4px;
+		display: block;
+		text-transform: uppercase;
+	}
+
+#controls .pause {
+	margin-top: 30px;
+	font-size: 11px;
+	text-align: center;
+}
+
+.support {
+	font-size: 11px;
+	position: absolute;
+	bottom: 15px;
+	right: 10px;
+	margin: 0;
+	text-align: right;
+	z-index: 50;
+}
+	.scores .support {
+		margin: 50px 15px;
+		text-align: center;
+		position: static;
+	}
+	.support a {
+		margin-right: 15px;
+		-webkit-transition: opacity .2s ease-in;
+		transition: opacity .2s ease-in;
+	}
+	.support .nadh {
+		margin-right: 30px;
+	}
+	.support .fb {
+		background: url('images/facebook.png') no-repeat center center;
+		padding: 2px 0 2px 15px;
+	}
+	.support .tweet {
+		background: url('images/twitter.png') no-repeat center center;
+		padding: 2px 0 2px 20px;
+	}
+	.support .gplus {
+		background: url('images/gplus.png') no-repeat center center;
+		padding: 2px 0 2px 18px;
+	}
+
+	.support .social {
+		vertical-align: bottom;
+		margin: 0 15px -5px 15px;
+		display: inline-block;
+	}
+		.support .social a {
+			width: 75px !important;
+		}
+
+	#___plusone_0,
+	.support .g-plusone {
+		vertical-align: bottom !important;
+	}
+	.support a:hover {
+		opacity: .7;
+		-webkit-transition: opacity .2s ease-in;
+		transition: opacity .2s ease-in;
+	}
+	.support iframe {
+		display: inline-block;
+		margin-bottom: -6px;
+	}
+
+
+.scores .board {
+	width: 950px;
+	margin: 30px auto 10px auto;
+}
+	.scores .board small {
+		color: #999;
+		display: block;
+		text-align: center;
+	}
+	.scores .single {
+		margin-top: 100px;
+	}
+	.scores .board .button {
+		float: right;
+		margin-left: 15px;
+	}
+	.scores .board h1 {
+		text-align: center;
+	}
+	.scores .board table td a {
+		text-decoration: underline;
+	}
+
+table {
+	width: 100%;
+	margin-top: 25px;
+}
+	table thead {
+		font-weight: bold;
+		font-size: 15px;
+	}
+	table td {
+		padding: 4px 5px;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+
+		padding: 8px 10px;
+	}
+	table tbody td {
+		border-bottom: 1px solid #999;
+	}
+	table td.name a {
+		display: block;
+	}
+	table tbody tr:nth-child(2n+1) td {
+		background: #f9f9f9;
+	}
+	
+	table .options {
+		text-align: right;
+	}
+	table .options div {
+		opacity: 0;
+		margin-top: 4px;
+	}
+	table .options a {
+		margin-left: 5px;
+	}
+	table .options .bt_share {
+		float: left;
+	}
+
+
+h1, h2, h3 {
+	font-weight: normal;
+	margin: 0 0 10px 0;
+}
+.button,
+button {
+	background: #0090ff;
+	color: #fff;
+	border: 0;
+	padding: 3px 6px;
+
+	border-radius: 2px;
+
+	font-family: 'Segoe UI Light', 'Helvetica Neue', Helvetica, Arial;
+	text-decoration: none;
+	cursor: pointer;
+	text-align: center;
+	display: inline-block;
+
+	-webkit-transition: all .2s ease-in;
+	transition: all .2s ease-in;
+}
+	.button:hover,
+	button:hover {
+		background: #0067b6;
+		color: #fff;
+
+		-webkit-transition: all .2s ease-in;
+		transition: all .2s ease-in;
+	}
+
+a {
+	color: #333;
+	text-decoration: none;
+}
+a:hover {
+	color: #444;
+}
+.clear {
+	clear: both;
+}

@@ -40,6 +40,12 @@ img{
     color: black;
 }
 
+#mainNav .nav-link:active{
+    background-color: aliceblue;
+    border-radius: 0.5;
+    color: black;
+}
+
 #heading1{
     color:  #2a2b63;
     font-size: 45px;
@@ -95,8 +101,11 @@ hr{
 
 footer{
     background-color: #211a4b;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
+    margin-top: 100px;
+}
+
+#faqhead{
+    color: #b1040e;
+    margin-top: 100px;
+    margin-bottom: 20px;
 }
