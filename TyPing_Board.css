@@ -31,7 +31,7 @@
   }
   
   .cpm, .wpm  {
-    display: none;
+    display: block;
   }
   
   .header_text {
@@ -76,7 +76,7 @@
   }
   
   .restart_btn {
-    display: none;
+    display: block;
     background-color: #326765;
     font-size: 1.5rem;
     padding: 10px;
