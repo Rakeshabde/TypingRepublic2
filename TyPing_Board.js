@@ -87,6 +87,19 @@ function processCurrentText() {
       // increment number of errors
       errors++;
     }
+
+    cpm = Math.round(((characterTyped / timeElapsed) * 60));
+    wpm = Math.round((((characterTyped / 5) / timeElapsed) * 60));
+  
+    // update cpm and wpm text
+    cpm_text.textContent = cpm;
+    wpm_text.textContent = wpm;
+  
+    // display the cpm and wpm
+    cpm_group.style.display = "block";
+    wpm_group.style.display = "block";
+
+
   });
 
   // display the number of errors
