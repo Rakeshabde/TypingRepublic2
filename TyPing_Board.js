@@ -192,7 +192,7 @@ function resetValues() {
   accuracy_text.textContent = 100;
   timer_text.textContent = timeLeft + 's';
   error_text.textContent = 0;
-  restart_btn.style.display = "none";
-  cpm_group.style.display = "none";
-  wpm_group.style.display = "none";
+  // restart_btn.style.display = "none";
+  // cpm_group.style.display = "none";
+  // wpm_group.style.display = "none";
 }
