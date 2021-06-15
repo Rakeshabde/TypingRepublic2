@@ -19,7 +19,7 @@
     align-items: center;
   }
   
-  .timer, .errors,
+  .timer, .errors, .neterrors,
   .accuracy, .cpm, .wpm {
     background-color: goldenrod;
     height: 60px;

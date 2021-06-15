@@ -1,5 +1,5 @@
 // define the time limit
-let TIME_LIMIT = 15;
+let TIME_LIMIT = 30;
 
 // define quotes to be used
 let quotes_array = [
@@ -23,6 +23,7 @@ let restart_btn = document.querySelector(".restart_btn");
 let cpm_group = document.querySelector(".cpm");
 let wpm_group = document.querySelector(".wpm");
 let error_group = document.querySelector(".errors");
+let neterror_group = document.querySelector(".neterrors");
 let accuracy_group = document.querySelector(".accuracy");
 
 let timeLeft = TIME_LIMIT;
@@ -34,6 +35,8 @@ let characterTyped = 0;
 let current_quote = "";
 let quoteNo = 0;
 let timer = null;
+
+let neterrors = 0;
 
 function updateQuote() {
   quote_text.textContent = null;
@@ -53,6 +56,8 @@ function updateQuote() {
   else
     quoteNo = 0;
 }
+
+var prevneterrors = 0;
 
 function processCurrentText() {
 
@@ -83,10 +88,12 @@ function processCurrentText() {
     } else {
       char.classList.add('incorrect_char');
       char.classList.remove('correct_char');
-
-      // increment number of errors
-      errors++;
     }
+
+    errors = document.getElementsByClassName('incorrect_char').length;
+
+
+    console.log("Errors : " + errors);
 
     cpm = Math.round(((characterTyped / timeElapsed) * 60));
     wpm = Math.round((((characterTyped / 5) / timeElapsed) * 60));
@@ -94,10 +101,19 @@ function processCurrentText() {
     // update cpm and wpm text
     cpm_text.textContent = cpm;
     wpm_text.textContent = wpm;
+
   
     // display the cpm and wpm
     cpm_group.style.display = "block";
     wpm_group.style.display = "block";
+
+
+    var x = document.getElementsByClassName('correct_char').length;
+    var y = document.getElementsByClassName('incorrect_char').length
+    console.log("Total correct chars : " + x);
+    console.log("Total incorrect chars : " + y);
+
+    // console.log("Net errors : " + neterrors);
 
 
   });
