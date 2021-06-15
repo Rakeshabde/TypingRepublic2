@@ -1,3 +1,4 @@
+
 // define the time limit
 let TIME_LIMIT = 30;
 
@@ -61,6 +62,29 @@ function updateQuote() {
 
 var prevneterrors = 0;
 
+
+
+
+var focusevent = function () {
+  input_area.addEventListener('keypress', once);
+  input_area.removeEventListener('focus', focusevent);
+  startGame();
+
+}
+
+var once = function () {
+
+  input_area.addEventListener('input',processCurrentText)
+  input_area.removeEventListener('keypress', once);
+
+}
+
+
+
+input_area.addEventListener('focus', focusevent);
+
+
+
 function processCurrentText() {
 
   // get current input text and split it
@@ -94,7 +118,7 @@ function processCurrentText() {
     errors = document.getElementsByClassName('incorrect_char').length;
 
 
-    if(errors > olderror){
+    if (errors > olderror) {
       neterrors++;
     }
     olderror = errors;
@@ -105,38 +129,38 @@ function processCurrentText() {
 
     cpm = Math.round(((characterTyped / timeElapsed) * 60));
     wpm = Math.round((((characterTyped / 5) / timeElapsed) * 60));
-  
+
     // update cpm and wpm text
     cpm_text.textContent = cpm;
-    wpm_text.textContent = wpm
+    wpm_text.textContent = wpm;
     neterror_text.textContent = neterrors;
-  
+
     // display the cpm and wpm
     cpm_group.style.display = "block";
     wpm_group.style.display = "block";
-    
+
 
 
     var x = document.getElementsByClassName('correct_char');
     // console.log(x[0].innerHTML)
-    for (var i=0; i<x.length; i++){
+    for (var i = 0; i < x.length; i++) {
       console.log(x.item(i).innerHTML);
     }
 
-   /* var y = document.getElementsByClassName('incorrect_char').length;
-    console.log("Total correct chars : " + x);
-    console.log("Total incorrect chars : " + y); 
+    /* var y = document.getElementsByClassName('incorrect_char').length;
+     console.log("Total correct chars : " + x);
+     console.log("Total incorrect chars : " + y); 
+ 
+     // console.log("Net errors : " + neterrors);
+ 
+     // x.innerhtml.forEach(element => {
+     //   console.log(element)
+     // });
+   */
 
-    // console.log("Net errors : " + neterrors);
-
-    // x.innerhtml.forEach(element => {
-    //   console.log(element)
-    // });
-  */
 
 
 
-    
 
 
   });
