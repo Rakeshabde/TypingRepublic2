@@ -41,6 +41,14 @@ let timer = null;
 let neterrors = 0;
 let olderror = 0;
 
+restart_btn.addEventListener('click',restartbtn);
+
+function restartbtn() {
+  finishGame();
+  resetValues();
+  focusevent();
+}
+
 function updateQuote() {
   quote_text.textContent = null;
   current_quote = quotes_array[quoteNo];
@@ -245,6 +253,7 @@ function resetValues() {
   timeElapsed = 0;
   errors = 0;
   total_errors = 0;
+  neterrors = 0;
   accuracy = 0;
   characterTyped = 0;
   quoteNo = 0;
@@ -254,7 +263,11 @@ function resetValues() {
   quote_text.textContent = 'Click on the area below to start the test.';
   accuracy_text.textContent = 100;
   timer_text.textContent = timeLeft + 's';
+  neterror_text.textContent = 0;
   error_text.textContent = 0;
+  cpm_text.textContent = "";
+  wpm_text.textContent = "";
+
   // restart_btn.style.display = "none";
   // cpm_group.style.display = "none";
   // wpm_group.style.display = "none";
