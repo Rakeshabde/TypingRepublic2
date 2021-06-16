@@ -1,4 +1,3 @@
-
 // define the time limit
 let TIME_LIMIT = 30;
 
@@ -82,11 +81,9 @@ var focusevent = function () {
 }
 
 var once = function () {
-
   input_area.addEventListener('input', processCurrentText)
   input_area.removeEventListener('keypress', once);
   startGame();
-
 }
 
 
@@ -168,11 +165,6 @@ function processCurrentText() {
      // });
    */
 
-
-
-
-
-
   });
 
   // display the number of errors
@@ -241,7 +233,6 @@ function finishGame() {
 
 
 function startGame() {
-
 
   // clear old and start a new timer
   clearInterval(timer);
