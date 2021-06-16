@@ -214,7 +214,7 @@ function finishGame() {
   input_area.disabled = true;
 
   // show finishing text
-  quote_text.textContent = "Click on restart to again take test.";
+  // quote_text.textContent = "Click on restart to again take test.";
 
   // display restart button
   restart_btn.style.display = "block";
