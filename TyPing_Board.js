@@ -72,8 +72,6 @@ function updateQuote() {
 var prevneterrors = 0;
 
 
-
-
 var focusevent = function () {
   input_area.addEventListener('keypress', once);
   input_area.removeEventListener('focus', focusevent);
@@ -100,7 +98,7 @@ function processCurrentText() {
   curr_input = input_area.value;
   curr_input_array = curr_input.split('');
 
-  // increment total characters typed
+
   characterTyped++;
 
   errors = 0;
@@ -133,8 +131,7 @@ function processCurrentText() {
     olderror = errors;
 
 
-    // console.log("Errors : " + errors);
-    // console.log("Net errors : " + neterrors);
+    // console.log("Errors : " + errors + "\n Net errors : " + neterrors);
 
     cpm = Math.round(((characterTyped / timeElapsed) * 60));
     wpm = Math.round((((characterTyped / 5) / timeElapsed) * 60));
@@ -144,28 +141,6 @@ function processCurrentText() {
     wpm_text.textContent = wpm;
     neterror_text.textContent = neterrors;
 
-    // display the cpm and wpm
-    cpm_group.style.display = "block";
-    wpm_group.style.display = "block";
-
-
-
-    var x = document.getElementsByClassName('correct_char');
-    // console.log(x[0].innerHTML)
-    // for (var i = 0; i < x.length; i++) {
-    //   console.log(x.item(i).innerHTML);
-    // }
-
-    /* var y = document.getElementsByClassName('incorrect_char').length;
-     console.log("Total correct chars : " + x);
-     console.log("Total incorrect chars : " + y); 
- 
-     // console.log("Net errors : " + neterrors);
- 
-     // x.innerhtml.forEach(element => {
-     //   console.log(element)
-     // });
-   */
 
   });
 
@@ -192,10 +167,8 @@ function processCurrentText() {
 
 function updateTimer() {
   if (timeLeft > 0) {
-    // decrease the current time left
     timeLeft--;
 
-    // increase the time elapsed
     timeElapsed++;
 
     // update the timer text
@@ -211,26 +184,15 @@ function finishGame() {
   // stop the timer
   clearInterval(timer);
 
-  // disable the input area
   input_area.disabled = true;
 
-  // show finishing text
-  // quote_text.textContent = "Click on restart to again take test.";
 
-  // display restart button
-  restart_btn.style.display = "block";
-
-  // calculate cpm and wpm
   cpm = Math.round(((characterTyped / timeElapsed) * 60));
   wpm = Math.round((((characterTyped / 5) / timeElapsed) * 60));
 
-  // update cpm and wpm text
   cpm_text.textContent = cpm;
   wpm_text.textContent = wpm;
 
-  // display the cpm and wpm
-  cpm_group.style.display = "block";
-  wpm_group.style.display = "block";
 }
 
 
@@ -261,7 +223,27 @@ function resetValues() {
   cpm_text.textContent = "";
   wpm_text.textContent = "";
 
-  // restart_btn.style.display = "none";
-  // cpm_group.style.display = "none";
-  // wpm_group.style.display = "none";
+
+
+
+
+
+
+
+      // var x = document.getElementsByClassName('correct_char');
+    // // console.log(x[0].innerHTML)
+    // // for (var i = 0; i < x.length; i++) {
+    // //   console.log(x.item(i).innerHTML);
+    // // }
+
+    //  var y = document.getElementsByClassName('incorrect_char').length;
+    //  console.log("Total correct chars : " + x);
+    //  console.log("Total incorrect chars : " + y); 
+ 
+    //  // console.log("Net errors : " + neterrors);
+ 
+    //  // x.innerhtml.forEach(element => {
+    //  //   console.log(element)
+    //  // });
+   
 }
