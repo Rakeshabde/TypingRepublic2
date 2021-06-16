@@ -49,8 +49,9 @@ function restartbtn() {
 }
 
 function updateQuote() {
+  let randomQuote = Math.floor(Math.random()*quotes_array.length);
   quote_text.textContent = null;
-  current_quote = quotes_array[quoteNo];
+  current_quote = quotes_array[randomQuote];
 
   // separate each character and make an element 
   // out of each of them to individually style them
@@ -131,8 +132,8 @@ function processCurrentText() {
     olderror = errors;
 
 
-    console.log("Errors : " + errors);
-    console.log("Net errors : " + neterrors);
+    // console.log("Errors : " + errors);
+    // console.log("Net errors : " + neterrors);
 
     cpm = Math.round(((characterTyped / timeElapsed) * 60));
     wpm = Math.round((((characterTyped / 5) / timeElapsed) * 60));
@@ -150,9 +151,9 @@ function processCurrentText() {
 
     var x = document.getElementsByClassName('correct_char');
     // console.log(x[0].innerHTML)
-    for (var i = 0; i < x.length; i++) {
-      console.log(x.item(i).innerHTML);
-    }
+    // for (var i = 0; i < x.length; i++) {
+    //   console.log(x.item(i).innerHTML);
+    // }
 
     /* var y = document.getElementsByClassName('incorrect_char').length;
      console.log("Total correct chars : " + x);
