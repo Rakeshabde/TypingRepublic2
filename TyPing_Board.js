@@ -68,14 +68,16 @@ var prevneterrors = 0;
 var focusevent = function () {
   input_area.addEventListener('keypress', once);
   input_area.removeEventListener('focus', focusevent);
-  startGame();
 
+  resetValues();
+  updateQuote();
 }
 
 var once = function () {
 
-  input_area.addEventListener('input',processCurrentText)
+  input_area.addEventListener('input', processCurrentText)
   input_area.removeEventListener('keypress', once);
+  startGame();
 
 }
 
@@ -232,8 +234,6 @@ function finishGame() {
 
 function startGame() {
 
-  resetValues();
-  updateQuote();
 
   // clear old and start a new timer
   clearInterval(timer);
