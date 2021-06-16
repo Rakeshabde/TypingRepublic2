@@ -3,6 +3,7 @@ let TIME_LIMIT = 30;
 
 // define quotes to be used
 let quotes_array = [
+  "Some cricketers rise to the top constitutes hours of. If his orthodoxy is compact and aesthetically pleasing.",
   "Push yourself, because no one else is going to do it for you.",
   "Failure is the condiment that gives success its flavor.",
   "Wake up with determination. Go to bed with satisfaction.",
