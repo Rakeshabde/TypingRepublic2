@@ -91,8 +91,11 @@ var once = function () {
 input_area.addEventListener('focus', focusevent);
 
 
+let time1;
 
 function processCurrentText() {
+
+  time1 = new Date();
 
   // get current input text and split it
   curr_input = input_area.value;
@@ -104,6 +107,9 @@ function processCurrentText() {
   errors = 0;
 
   quoteSpanArray = quote_text.querySelectorAll('span');
+
+
+
   quoteSpanArray.forEach((char, index) => {
     let typedChar = curr_input_array[index]
 
@@ -131,18 +137,18 @@ function processCurrentText() {
     olderror = errors;
 
 
-    // console.log("Errors : " + errors + "\n Net errors : " + neterrors);
-
-    cpm = Math.round(((characterTyped / timeElapsed) * 60));
-    wpm = Math.round((((characterTyped / 5) / timeElapsed) * 60));
-
-    // update cpm and wpm text
-    cpm_text.textContent = cpm;
-    wpm_text.textContent = wpm;
-    neterror_text.textContent = neterrors;
-
 
   });
+  
+  cpm = Math.round(((characterTyped / timeElapsed) * 60));
+  wpm = Math.round((((characterTyped / 5) / timeElapsed) * 60));
+
+  // update cpm and wpm text
+  cpm_text.textContent = cpm;
+  wpm_text.textContent = wpm;
+  neterror_text.textContent = neterrors;
+
+
 
   // display the number of errors
   error_text.textContent = total_errors + errors;
@@ -162,6 +168,20 @@ function processCurrentText() {
 
     // clear the input area
     input_area.value = "";
+  }
+
+  var timer2 = setInterval(() => {
+    help(time1);
+  }, 1);
+
+
+}
+
+function help(time1){
+  var time2 = new Date();
+  var elTime = time2.getSeconds() - time1.getSeconds();
+  if(elTime > 1){
+    processCurrentText();
   }
 }
 
@@ -192,6 +212,7 @@ function finishGame() {
 
   cpm_text.textContent = cpm;
   wpm_text.textContent = wpm;
+
 
 }
 
