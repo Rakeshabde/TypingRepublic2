@@ -31,17 +31,18 @@ let accuracy_group = document.querySelector(".accuracy");
 let timeLeft = TIME_LIMIT;
 let timeElapsed = 0;
 let total_errors = 0;
-let errors = 0;
+let initialIncorrectChars = 0;
 let accuracy = 0;
 let characterTyped = 0;
 let current_quote = "";
 let quoteNo = 0;
 let timer = null;
 
-let neterrors = 0;
+let totalErrors = 0;
+let initialCorrectChars = 0;
 let olderror = 0;
 
-restart_btn.addEventListener('click',restartbtn);
+restart_btn.addEventListener('click', restartbtn);
 
 function restartbtn() {
   finishGame();
@@ -50,7 +51,7 @@ function restartbtn() {
 }
 
 function updateQuote() {
-  let randomQuote = Math.floor(Math.random()*quotes_array.length);
+  let randomQuote = Math.floor(Math.random() * quotes_array.length);
   quote_text.textContent = null;
   current_quote = quotes_array[randomQuote];
 
@@ -104,7 +105,7 @@ function processCurrentText() {
 
   characterTyped++;
 
-  errors = 0;
+  initialIncorrectChars = 0;
 
   quoteSpanArray = quote_text.querySelectorAll('span');
 
@@ -128,34 +129,36 @@ function processCurrentText() {
       char.classList.remove('correct_char');
     }
 
-    errors = document.getElementsByClassName('incorrect_char').length;
+    initialIncorrectChars = document.getElementsByClassName('incorrect_char').length;
+    initialCorrectChars = document.getElementsByClassName('correct_char').length;
+    console.log("Total correct chars : " + initialCorrectChars)
 
 
-    if (errors > olderror) {
-      neterrors++;
+    if (initialIncorrectChars > olderror) {
+      totalErrors++;
     }
-    olderror = errors;
+    olderror = initialIncorrectChars;
 
 
 
   });
-  
-  cpm = Math.round(((characterTyped / timeElapsed) * 60));
-  wpm = Math.round((((characterTyped / 5) / timeElapsed) * 60));
+
+  cpm = Math.round(((initialCorrectChars / timeElapsed) * 60));
+  wpm = Math.round((((initialCorrectChars / 5) / timeElapsed) * 60));
 
   // update cpm and wpm text
   cpm_text.textContent = cpm;
   wpm_text.textContent = wpm;
-  neterror_text.textContent = neterrors;
+  neterror_text.textContent = totalErrors;
 
 
 
   // display the number of errors
-  error_text.textContent = total_errors + errors;
+  error_text.textContent = total_errors + initialIncorrectChars;
 
   // update accuracy text
-  let correctCharacters = (characterTyped - (total_errors + errors));
-  let accuracyVal = ((correctCharacters / characterTyped) * 100);
+  // let correctCharacters = (characterTyped - (total_errors + initialIncorrectChars));
+  let accuracyVal = ((initialIncorrectChars / characterTyped) * 100);
   accuracy_text.textContent = Math.round(accuracyVal);
 
   // if current text is completely typed
@@ -164,7 +167,7 @@ function processCurrentText() {
     updateQuote();
 
     // update total errors
-    total_errors += errors;
+    total_errors += initialIncorrectChars;
 
     // clear the input area
     input_area.value = "";
@@ -177,10 +180,10 @@ function processCurrentText() {
 
 }
 
-function help(time1){
+function help(time1) {
   var time2 = new Date();
   var elTime = time2.getSeconds() - time1.getSeconds();
-  if(elTime > 1){
+  if (elTime > 1) {
     processCurrentText();
   }
 }
@@ -251,20 +254,20 @@ function resetValues() {
 
 
 
-      // var x = document.getElementsByClassName('correct_char');
-    // // console.log(x[0].innerHTML)
-    // // for (var i = 0; i < x.length; i++) {
-    // //   console.log(x.item(i).innerHTML);
-    // // }
+  // var x = document.getElementsByClassName('correct_char');
+  // // console.log(x[0].innerHTML)
+  // // for (var i = 0; i < x.length; i++) {
+  // //   console.log(x.item(i).innerHTML);
+  // // }
 
-    //  var y = document.getElementsByClassName('incorrect_char').length;
-    //  console.log("Total correct chars : " + x);
-    //  console.log("Total incorrect chars : " + y); 
- 
-    //  // console.log("Net errors : " + neterrors);
- 
-    //  // x.innerhtml.forEach(element => {
-    //  //   console.log(element)
-    //  // });
-   
+  //  var y = document.getElementsByClassName('incorrect_char').length;
+  //  console.log("Total correct chars : " + x);
+  //  console.log("Total incorrect chars : " + y); 
+
+  //  // console.log("Net errors : " + neterrors);
+
+  //  // x.innerhtml.forEach(element => {
+  //  //   console.log(element)
+  //  // });
+
 }
