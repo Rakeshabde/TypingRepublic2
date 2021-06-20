@@ -41,6 +41,10 @@ let timer = null;
 let totalErrors = 0;
 let initialCorrectChars = 0;
 let olderror = 0;
+let oldcorrect = 0;
+let totalCorrects = 0;
+
+
 
 restart_btn.addEventListener('click', restartbtn);
 
@@ -106,6 +110,7 @@ function processCurrentText() {
   characterTyped++;
 
   initialIncorrectChars = 0;
+  initialCorrectChars = 0;
 
   quoteSpanArray = quote_text.querySelectorAll('span');
 
@@ -131,7 +136,15 @@ function processCurrentText() {
 
     initialIncorrectChars = document.getElementsByClassName('incorrect_char').length;
     initialCorrectChars = document.getElementsByClassName('correct_char').length;
-    console.log("Total correct chars : " + initialCorrectChars)
+
+
+
+
+    if(initialCorrectChars > oldcorrect){
+      totalCorrects++;
+    }
+    oldcorrect = initialCorrectChars;
+
 
 
     if (initialIncorrectChars > olderror) {
@@ -139,7 +152,13 @@ function processCurrentText() {
     }
     olderror = initialIncorrectChars;
 
+    characterTyped = totalErrors + totalCorrects;
 
+
+
+    // console.log("\nTotal errors : " + totalErrors)
+    // console.log("Total corrects : " + totalCorrects)
+    // console.log("Total TYPED :  "+ characterTyped)
 
   });
 
@@ -157,8 +176,7 @@ function processCurrentText() {
   error_text.textContent = total_errors + initialIncorrectChars;
 
   // update accuracy text
-  // let correctCharacters = (characterTyped - (total_errors + initialIncorrectChars));
-  let accuracyVal = ((initialIncorrectChars / characterTyped) * 100);
+  let accuracyVal = ((totalCorrects / characterTyped) * 100);
   accuracy_text.textContent = Math.round(accuracyVal);
 
   // if current text is completely typed
@@ -176,6 +194,9 @@ function processCurrentText() {
   var timer2 = setInterval(() => {
     help(time1);
   }, 1);
+
+
+
 
 
 }
